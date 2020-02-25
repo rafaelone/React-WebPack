@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 
-import nubank from "./assets/nubank.png";
+import TechList from "./components/TechList";
 
 function App() {
-  return <img src={nubank} alt="nubank" />;
+  return <TechList />;
 }
 
 export default App;
