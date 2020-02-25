@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./App.css";
 
-function App(){
-  return <h1>Hello World</h1>
+import nubank from "./assets/nubank.png";
+
+function App() {
+  return <img src={nubank} alt="nubank" />;
 }
 
-export default App
+export default App;
