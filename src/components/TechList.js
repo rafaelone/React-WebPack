@@ -7,7 +7,7 @@ class TechList extends React.Component {
   };
 
   handleInputChange = e => {
-    this.setState({ ...this.state, newTech: e.target.value });
+    this.setState({ newTech: e.target.value });
   };
 
   handleSubmit = e => {
@@ -18,12 +18,21 @@ class TechList extends React.Component {
     });
   };
 
+  handleDelete = tech => {
+    this.setState({ techs: this.state.techs.filter(t => t !== tech) });
+  };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <ul>
           {this.state.techs.map(tech => (
-            <li key={tech}>{tech}</li>
+            <li key={tech}>
+              {tech}
+              <button type="button" onClick={() => this.handleDelete(tech)}>
+                Remover
+              </button>
+            </li>
           ))}
         </ul>
         <input
