@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
+import PropTypes from "prop-types";
 
-function TechItem({tech, onDelete}){
+function TechItem({ tech, onDelete }) {
   return (
     <li>
       {tech}
@@ -8,7 +9,16 @@ function TechItem({tech, onDelete}){
         Remover
       </button>
     </li>
-  )
+  );
 }
 
-export default TechItem
+TechItem.defaultProps = {
+  tech: "Oculto"
+};
+
+TechItem.PropTypes = {
+  tech: PropTypes.string,
+  onDelete: PropTypes.func.isRequired
+};
+
+export default TechItem;
